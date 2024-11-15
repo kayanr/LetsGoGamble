@@ -13,23 +13,26 @@ class CasinoAccountManagerTest {
     @Test
     void getAccountTest1() {
         CasinoAccountManager casinoAccountManager = new CasinoAccountManager();
-
-        CasinoAccount testAccount = casinoAccountManager.createAccount("username", "password");
+        CasinoAccount testAccount1 = casinoAccountManager.createAccount("username", "password");
         String expectedName = "username";
-        String actualUserName = testAccount.getAccountName();
+        String actualUserName = testAccount1.getAccountName();
         Assert.assertEquals(expectedName, actualUserName);
-
-
-
     }
 
     @Test
+    void getAccountTest2() {
+        CasinoAccountManager casinoAccountManager = new CasinoAccountManager();
+        CasinoAccount testAccount2 = casinoAccountManager.createAccount("deepti", "rocks");
+        String expectedName = "deepti";
+        String actualUserName = testAccount2.getAccountName();
+        Assert.assertEquals(expectedName, actualUserName);
+    }
+
+
+    @Test
     void createAccount() {
-
-
-
-
-
+        CasinoAccount testAccount3 = new CasinoAccount("sam", "theman");
+        System.out.println(testAccount3.getAccountName());
     }
 
     @Test

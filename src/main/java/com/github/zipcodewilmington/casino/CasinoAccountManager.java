@@ -10,8 +10,8 @@ import java.util.TreeMap;
  */
 public class CasinoAccountManager {
 
-
     private TreeMap<Object, Object> accounts;
+
     public CasinoAccountManager() {
         this.accounts = new TreeMap<>();
 
@@ -23,7 +23,6 @@ public class CasinoAccountManager {
      * @return `ArcadeAccount` with specified `accountName` and `accountPassword`
      */
     public CasinoAccount getAccount(String accountName, String accountPassword) {
-
 
         CasinoAccount account = (CasinoAccount) accounts.get(accountName);
         return account;

@@ -13,7 +13,7 @@ public class CasinoAccountTest {
 
     public void showBalanceTest(){
 
-        CasinoAccount account=  new CasinoAccount("I","smell",100);
+        CasinoAccount account=  new CasinoAccount("I","smell");
 
         int expectedBalance = 100;
         int actualBalance =account.showBalance();
