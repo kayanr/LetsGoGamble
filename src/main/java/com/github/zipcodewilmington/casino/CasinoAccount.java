@@ -7,20 +7,22 @@ package com.github.zipcodewilmington.casino;
  */
 public class CasinoAccount {
 
-//ron
-    public CasinoAccount(String accountName, String accountPassword, int i) {
+    private String accountName;
+    private String accountPassword;
+    private int age;
+    private int accountBalance;
 
-
-    }
-
+    //ron
     public CasinoAccount(String accountName, String accountPassword) {
-    }
+        this.accountName = accountName;
+        this.accountPassword = accountPassword;
+        this.age = 1;
+        this.accountBalance = 1000;
 
+    }
 
     public String getAccountName() {
-
-
-        return "username";
+        return accountName;
     }
 
     public int showBalance() {
