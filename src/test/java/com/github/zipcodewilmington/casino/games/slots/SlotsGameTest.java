@@ -11,4 +11,14 @@ class SlotsGameTest {
     public void checkResultsTest() {
 
     }
+
+    @Test
+    public void calculatePayoutTest() {
+
+    }
+
+    @Test
+    public void winJackpotTest() {
+
+    }
 }
