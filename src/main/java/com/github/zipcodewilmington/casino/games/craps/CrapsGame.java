@@ -2,16 +2,10 @@ package com.github.zipcodewilmington.casino.games.craps;
 
 import com.github.zipcodewilmington.casino.PlayerInterface;
 
-import java.util.List;
-
 public class CrapsGame {
     private String players;
 
     public void add(PlayerInterface mockPlayer) {
-    }
-
-    public List<PlayerInterface> getPlayers() {
-        return players;
     }
 
     public void setPlayers(String players) {
@@ -28,5 +22,21 @@ public class CrapsGame {
 
     public int getBet() {
         return 0;
+    }
+
+    public boolean isWin(int i) {
+        return false;
+    }
+
+    public void setPoint(int expectedPoint) {
+
+    }
+
+    public int rollDice() {
+        return 0;
+    }
+
+    public void Roll(Object o, int winRoll) {
+
     }
 }

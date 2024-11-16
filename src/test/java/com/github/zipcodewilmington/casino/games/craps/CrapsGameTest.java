@@ -21,7 +21,6 @@ class CrapsGameTest {
     @Test
     void testAddPlayer() {
 
-
     }
 
     @Test
@@ -69,18 +68,38 @@ class CrapsGameTest {
 
     @Test
     void testRollDice() {
+       CrapsGame game = new CrapsGame();
+
+       int result = game.rollDice();
+
+       assertTrue(result >= 2 && result <= 12, "Roll is between 2 and 12");
 
     }
 
     @Test
     void testRollInitialWin() {
+       CrapsGame game = new CrapsGame();
+       int winRoll = 2;
+
+       game.Roll(null, winRoll);
+
+       assertTrue(game.isWin(winRoll));
     }
 
     @Test
     void testSetPoint() {
+       CrapsGame game = new CrapsGame();
+       int expectedPoint = 5;
+
+       game.setPoint(expectedPoint);
     }
 
     @Test
     void testIsWin() {
+       CrapsGame game = new CrapsGame();
+
+       boolean result = game.isWin(7);
+
+       assertTrue(result, "You win");
     }
 }
