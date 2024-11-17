@@ -66,7 +66,7 @@ public void shuffleTest(){
     Stack<Card> cardDeck = new Stack<>();
     cardDeck = deck.initializeDeck();
 
-    Card cardExpected = cardDeck.pop();
+    Card cardExpected = deck.dealCard();
     Card cardActual = new Card(12,3);
     Assert.assertTrue(cardExpected.toString().equals(cardActual.toString()));
 
