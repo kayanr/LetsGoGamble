@@ -21,4 +21,16 @@ public class BlackJackPlayer {
     public String getName() {
         return null;
     }
+
+    public int getNumberCards() {
+   return 2; }
+
+    public void cardReveal(boolean b) {
+    }
+
+    public int getHandTotal() {
+   return 1; }
+
+    public void emptyHand() {
+    }
 }
