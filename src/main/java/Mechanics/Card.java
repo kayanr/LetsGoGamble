@@ -26,7 +26,7 @@ public Card(){
     }
 
 
-    //Getters and Setters for Rank and Suit
+    //Getter
     public String getRank() {
         return rank;
     }
@@ -43,4 +43,11 @@ public Card(){
         this.suit = suit;
     }
 
+    @Override
+    public String toString() {
+        return "Card{" +
+                "rank='" + rank + '\'' +
+                ", suit='" + suit + '\'' +
+                '}';
+    }
 }
