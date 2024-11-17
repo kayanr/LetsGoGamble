@@ -9,9 +9,9 @@ public class CardTest {
     Card card;
 
     public void setUp(){
-        String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
-        String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
-        card = new Card(new String[]{suits[0]}, new String[]{ranks[0]});
+//        String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
+//        String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+        card = new Card(0, 0);
 
     }
     @Test
@@ -19,31 +19,43 @@ public class CardTest {
 
     public void testGetCardValueForSeven(){
 
-    String[] suits = {"Spades"};
-    String[] ranks = {"7"};
+    card = new Card(6,0);
 
-    card = new Card(suits, ranks);
+    String expected = "7";
 
-
-    int expected = 7;
-
-    int actual = card.getCardValue();
+    String actual = card.getRank();
 
     Assert.assertEquals(expected, actual);
 
+    }
 
+    @Test
+    public void setrankTest() {
+        card = new Card();
 
+        card.setRank("Ace");
 
+        Assert.assertEquals("Ace", card.getRank());
 
     }
+
+    @Test
+    public void setsuitTest(){
+        card = new Card();
+        card.setSuit("Diamonds");
+
+        Assert.assertEquals("Diamonds", card.getSuit());
+
+    }
+
 
     @Test
 
     public void testGetSuit(){
 
-        String[] suits = {"Hearts"};
-        String[] ranks = {"5"};
-        card = new Card(suits,ranks);
+//        String[] suits = {"Hearts"};
+//        String[] ranks = {"5"};
+        card = new Card(1,1);
 
         String expectedSuit = "Hearts";
 

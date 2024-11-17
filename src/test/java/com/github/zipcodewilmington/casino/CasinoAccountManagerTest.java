@@ -13,9 +13,10 @@ class CasinoAccountManagerTest {
     @Test
     void getAccountTest1() {
         CasinoAccountManager casinoAccountManager = new CasinoAccountManager();
-        CasinoAccount testAccount1 = casinoAccountManager.createAccount("username", "password");
+        CasinoAccount casinoAccount = casinoAccountManager.getAccount("accountName", "accountPassword");
+       // CasinoAccount testAccount1 = casinoAccountManager.createAccount("username", "password");
         String expectedName = "username";
-        String actualUserName = testAccount1.getAccountName();
+        String actualUserName = casinoAccount.getAccountName();
         Assert.assertEquals(expectedName, actualUserName);
 
     }
