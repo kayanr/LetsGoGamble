@@ -12,14 +12,14 @@ public class SlotsGame {
     // Symbols to choose from for each reel
     public static final String[] symbols = {"🍒", "🍋", "🍊", "🍉", "⭐", "🍀"};
     private static Random random = new Random();
-    private static String[] reel = new String[3];
-    private static int winnings;
+    static String[] reel;
 
     public SlotsGame() {
     }
 
     // Method to simulate a single spin
     public static String[] spinReel() {
+        String[] reel = new String[3];
         for (int i = 0; i < 3; i++) {
             reel[i] = symbols[random.nextInt(symbols.length)];
         }
@@ -33,6 +33,7 @@ public class SlotsGame {
     }
 
     public static int calculatePayout() {
+        int winnings;
         if (Arrays.equals(reel, new String[]{"🍒", "🍒", "🍒"})) {
             winnings = 10;
         } else if (Arrays.equals(reel, new String[]{"🍋", "🍋", "🍋"})) {

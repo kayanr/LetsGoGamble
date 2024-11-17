@@ -3,11 +3,13 @@ package com.github.zipcodewilmington.casino.games.slots;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.github.zipcodewilmington.casino.games.slots.SlotsGame;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
+import java.util.Date;
 
 public class SlotsGameTest {
-    SlotsGame slotsgame;
+    SlotsGame slotsgame = new SlotsGame();
 
     @Test
     public void testForSymbols () {
@@ -27,6 +29,21 @@ public class SlotsGameTest {
         String[] secondSpin = SlotsGame.spinReel();
 
         // Ensure the two spins are different
-        assertFalse(Arrays.equals(firstSpin, secondSpin), "The two spins should be different.");
+        assertEquals(Arrays.equals(firstSpin, secondSpin), false, "The two spins should be different.");
     }
+
+    @Test
+    public void testPayout () {
+       // given
+        SlotsGame.reel = new String[]{"🍒", "🍒", "🍒"};
+        int expectedWinnings = 10;
+
+        int winnings = SlotsGame.calculatePayout();
+
+        assertEquals(10, winnings);
+
+    }
+
+
+
 }
