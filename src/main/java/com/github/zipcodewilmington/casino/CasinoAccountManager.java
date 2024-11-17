@@ -10,7 +10,7 @@ import java.util.TreeMap;
  */
 public class CasinoAccountManager {
 
-    private TreeMap<Object, Object> accounts;
+    private TreeMap<Object, CasinoAccount> accounts;
 
     public CasinoAccountManager() {
         this.accounts = new TreeMap<>();
@@ -24,8 +24,7 @@ public class CasinoAccountManager {
      */
     public CasinoAccount getAccount(String accountName, String accountPassword) {
 
-        CasinoAccount account = (CasinoAccount) accounts.get(accountName);
-        return account;
+        return accounts.get(accountName);
 
 
 
@@ -45,11 +44,7 @@ public class CasinoAccountManager {
      */
     public CasinoAccount createAccount(String accountName, String accountPassword) {
 
-        CasinoAccount newAccount = new CasinoAccount(accountName, accountPassword);
-        accounts.put(newAccount.getAccountName(), newAccount);
-
-
-        return newAccount;
+        return new CasinoAccount(accountName, accountPassword);
 
        /* String currentMethodName = new Object(){}.getClass().getEnclosingMethod().getName();
         String currentClassName = getClass().getName();
@@ -63,8 +58,7 @@ public class CasinoAccountManager {
      * @param casinoAccount the arcadeAccount to be added to `this.getArcadeAccountList()`
      */
     public void registerAccount(CasinoAccount casinoAccount) {
-
-
+        accounts.put(newAccount.getAccountName(), newAccount);
 
 
 //        String currentMethodName = new Object(){}.getClass().getEnclosingMethod().getName();
