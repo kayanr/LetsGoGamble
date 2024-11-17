@@ -85,11 +85,20 @@ private static final Logger LOGGER = Logger.getLogger(NumberGuessGameTest.class.
     }
 
     @Test
-    public void testNumberToGuess(){
+    public void testGetNumberToGuess(){
         int expectedNumberToGuess = 66;
         MockRandomNumGenerator testRandom = new MockRandomNumGenerator(expectedNumberToGuess);
         NumberGuessGame myGame = new NumberGuessGame(10, testRandom);
         int actualNumberToGuess = myGame.getNumberToGuess();
         assertEquals(expectedNumberToGuess, actualNumberToGuess);
     }
+
+    @Test
+    public void testGetNumberOfTries(){
+        int expectedNumberOfTries = 10;
+        NumberGuessGame myGame = new NumberGuessGame(expectedNumberOfTries, new Random());
+        int actualNumberOfTries = myGame.getNumberOfTries();
+        assertEquals(expectedNumberOfTries, actualNumberOfTries);
+    }
+
 }
