@@ -83,4 +83,13 @@ private static final Logger LOGGER = Logger.getLogger(NumberGuessGameTest.class.
         String outCome = myGame.guessNumber(66);
         assertEquals("Number guessed correctly! Congratulations", outCome);
     }
+
+    @Test
+    public void testNumberToGuess(){
+        int expectedNumberToGuess = 66;
+        MockRandomNumGenerator testRandom = new MockRandomNumGenerator(expectedNumberToGuess);
+        NumberGuessGame myGame = new NumberGuessGame(10, testRandom);
+        int actualNumberToGuess = myGame.getNumberToGuess();
+        assertEquals(expectedNumberToGuess, actualNumberToGuess);
+    }
 }
