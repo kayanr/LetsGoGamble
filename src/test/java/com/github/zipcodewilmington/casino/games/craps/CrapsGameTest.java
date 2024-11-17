@@ -11,6 +11,10 @@ class CrapsGameTest {
         private CrapsGame crapsGame;
 
 
+
+
+
+
    @BeforeEach
    void setUp(){
        crapsGame = new CrapsGame();
@@ -18,14 +22,14 @@ class CrapsGameTest {
    }
 
 
-    @Test
-    void testAddPlayer() {
-
-    }
-
-    @Test
-    void testRemovePlayer() {
-    }
+//    @Test
+//    void testAddPlayer() {
+//
+//    }
+//
+//    @Test
+//    void testRemovePlayer() {
+//    }
 
     @Test
     void testPlayTurn() {
@@ -34,6 +38,7 @@ class CrapsGameTest {
 
     @Test
     void testCheckWin() {
+       assertTrue(crapsGame.isWin());
 
     }
 
@@ -58,7 +63,16 @@ class CrapsGameTest {
 
     @Test
     void testCanAfford() {
+        // Arrange
+        CrapsGame game = new CrapsGame();
+        game.setBet(50);
+        game.setBalance(100);
 
+        // Act
+        boolean result = game.canAfford();
+
+        // Assert
+        assertTrue(result, "Player should afford the bet when balance is greater than or equal to the bet.");
     }
 
     @Test
@@ -83,7 +97,7 @@ class CrapsGameTest {
 
        game.Roll(null, winRoll);
 
-       assertTrue(game.isWin(winRoll));
+       assertTrue(game.isWin());
     }
 
     @Test
@@ -98,7 +112,7 @@ class CrapsGameTest {
     void testIsWin() {
        CrapsGame game = new CrapsGame();
 
-       boolean result = game.isWin(7);
+       boolean result = game.isWin();
 
        assertTrue(result, "You win");
     }

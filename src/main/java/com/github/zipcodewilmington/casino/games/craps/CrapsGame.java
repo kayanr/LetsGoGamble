@@ -24,7 +24,7 @@ public class CrapsGame {
         return 0;
     }
 
-    public boolean isWin(int i) {
+    public boolean isWin() {
         return false;
     }
 
@@ -38,5 +38,26 @@ public class CrapsGame {
 
     public void Roll(Object o, int winRoll) {
 
+    }
+
+
+
+
+
+    public boolean checkWin() {
+        return isWin();
+    }
+
+    public boolean canAfford() {
+        return false;
+    }
+
+    public void setBet(int i) {
+    }
+
+    public void setBalance(int i) {
+    }
+
+    public void playTurn() {
     }
 }
