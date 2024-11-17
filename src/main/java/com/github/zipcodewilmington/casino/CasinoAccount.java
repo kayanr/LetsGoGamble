@@ -26,6 +26,6 @@ public class CasinoAccount {
     }
 
     public int showBalance() {
-        return 100;
+        return accountBalance;
     }
 }
