@@ -8,18 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 public class HandTest {
 
     private Hand hand = new Hand();
-    private Card card1;
-    private Card card2;
-
+    Card card1 = new Card(0,0);
+    Card card2 = new Card(3,3);
 
 
     public void setUp(){
 
         hand = new Hand();
-        card1 = new Card(0,0);
-        card2 = new Card(1,12);
-
-
 
     }
 
@@ -39,7 +34,9 @@ public class HandTest {
 
         hand.addCard(card2);
 
-        Assert.assertFalse(hand.getCards().isEmpty());
+        Card expectedCardinHand = new Card(3,3);
+
+      Assert.assertTrue(expectedCardinHand.toString().equals(hand.getCards().get(0).toString()));
 
     }
 
