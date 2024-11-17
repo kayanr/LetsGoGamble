@@ -115,4 +115,21 @@ private static final Logger LOGGER = Logger.getLogger(NumberGuessGameTest.class.
 
     }
 
+    @Test
+    public void testRemove(){
+        MockRandomNumGenerator testRandom = new MockRandomNumGenerator(66);
+        NumberGuessGame myGame = new NumberGuessGame(10, testRandom);
+        NumberGuessPlayer player1 = new NumberGuessPlayer("Kay", 100);
+        NumberGuessPlayer player2 = new NumberGuessPlayer("John", 100);
+        myGame.add(player1);
+        myGame.add(player2);
+        myGame.remove(player1);
+
+        int expectedCount = 1;
+        assertEquals(expectedCount, myGame.getNumberOfPlayers());
+        myGame.remove(player2);
+        expectedCount = 0;
+        assertEquals(expectedCount, myGame.getNumberOfPlayers());
+    }
+
 }
