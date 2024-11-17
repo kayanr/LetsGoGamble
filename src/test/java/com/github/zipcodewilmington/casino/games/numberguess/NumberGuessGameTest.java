@@ -52,8 +52,8 @@ private static final Logger LOGGER = Logger.getLogger(NumberGuessGameTest.class.
         //Then
         int expectedNumberToGuess = 50;
 
-        LOGGER.info("Expected number guessed to be: "+ expectedNumberToGuess);
-        LOGGER.info("Actual number guessed: "+ numGame.getNumberToGuess());
+        //LOGGER.info("Expected number guessed to be: "+ expectedNumberToGuess);
+        //LOGGER.info("Actual number guessed: "+ numGame.getNumberToGuess());
 
         assertEquals(expectedNumberToGuess, numGame.getNumberToGuess());
         assertEquals(expectedNumberOfTries, numGame.getNumberOfTries());
@@ -74,5 +74,13 @@ private static final Logger LOGGER = Logger.getLogger(NumberGuessGameTest.class.
         NumberGuessGame myGame = new NumberGuessGame(10, testRandom);
         String outCome = myGame.guessNumber(66);
         assertEquals("Wrong guess, the number is too high!", outCome);
+    }
+
+    @Test
+    public void testNumberGameGuessCorrect(){
+        MockRandomNumGenerator testRandom = new MockRandomNumGenerator(66);
+        NumberGuessGame myGame = new NumberGuessGame(10, testRandom);
+        String outCome = myGame.guessNumber(66);
+        assertEquals("Number guessed correctly! Congratulations", outCome);
     }
 }

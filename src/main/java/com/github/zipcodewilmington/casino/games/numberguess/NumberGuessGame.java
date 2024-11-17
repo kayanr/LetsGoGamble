@@ -40,7 +40,7 @@ public class NumberGuessGame {
             return "Wrong guess, the number is too high!";
         }
         else {
-            return " Number guessed correctly!";
+            return "Number guessed correctly! Congratulations";
 
         }
 
