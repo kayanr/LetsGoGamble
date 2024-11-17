@@ -31,4 +31,18 @@ public class NumberGuessGame {
     public int getNumberToGuess() {
         return numberToGuess;
     }
+
+    public String guessNumber(int guess) {
+        if (guess < numberToGuess) {
+            return "Wrong guess, the number is too low!";
+        }
+        else if (guess > numberToGuess) {
+            return "Wrong guess, the number is too high!";
+        }
+        else {
+            return " Number guessed correctly!";
+
+        }
+
+    }
 }

@@ -60,5 +60,12 @@ private static final Logger LOGGER = Logger.getLogger(NumberGuessGameTest.class.
 
     }
 
+    @Test
+    public void testNumberGameGuessTooLow(){
+        MockRandomNumGenerator testRandom = new MockRandomNumGenerator(60);
+        NumberGuessGame myGame = new NumberGuessGame(10, testRandom);
+        String outCome = myGame.guessNumber(16);
+        assertEquals("Wrong guess, the number is too low!", outCome);
+    }
 
 }
