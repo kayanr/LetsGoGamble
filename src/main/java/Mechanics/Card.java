@@ -1,6 +1,6 @@
 package Mechanics;
 
-public class Card {
+public class Card extends Deck {
 //static int[] deck = new int[52];
 
 //Declaring array of card suit and ranks.
