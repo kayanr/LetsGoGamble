@@ -36,8 +36,14 @@ public class BlackJackPlayer {
    return 2; }
 
 
-    public Collection<Card> getHandTotal() {
-   return hand.getCards(); }
+    public int getHandTotal() {
+
+        int total = 0;
+        int numAces = 0;
+
+
+        for (Card card : hand.getCards());
+    return 0;}
 
     public void emptyHand() {
     }
@@ -48,9 +54,14 @@ public class BlackJackPlayer {
     }
 
     public void dealIntitialCards(Deck deck) {
+
+        hand.addCard(deck.dealCard());
+        hand.addCard(deck.dealCard());
     }
 
     public void hit(Deck deck) {
+
+        hand.addCard(deck.dealCard());
 
     }
 }
