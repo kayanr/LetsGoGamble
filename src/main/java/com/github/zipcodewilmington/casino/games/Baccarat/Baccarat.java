@@ -36,13 +36,13 @@ public class Baccarat implements GameInterface, PlayerInterface {
     @Override
     public <SomeReturnType> SomeReturnType play() {
         String input ="";
-     //  do {
+       do {
            deck.initializeDeck();
            deck.shuffle();
            // Clear the hands
            playerHand.clear();
            bankerHand.clear();
-
+           this.getBet();
            // Deal two cards to both player and banker
            dealInitialCards();
 
@@ -58,12 +58,12 @@ public class Baccarat implements GameInterface, PlayerInterface {
            // Determine the winner
            determineWinner();
 
-//           System.out.println("\nDo you wish to play Again...??");
-//           Scanner scan = new Scanner(System.in);
-//           System.out.println("Yes / No");
-//           input= scan.nextLine();
+          System.out.println("\nDo you wish to play Again...??");
+           Scanner scan = new Scanner(System.in);
+          System.out.println("Yes / No");
+           input= scan.nextLine();
 
-  //     }while(input.equals("Yes"));
+       }while(input.equals("Yes"));
         return null;
     }
 
@@ -126,6 +126,7 @@ public class Baccarat implements GameInterface, PlayerInterface {
         IOConsole io = new IOConsole();
         int bet;
         while (true) {
+           // bet = 200;
             bet = io.getIntegerInput("PLACE YOUR BET...?");
             if (!canAfford(bet)) {
                 System.out.println("YOU DO NOT HAVE ENOUGH MONEY TO PLAY");
@@ -167,7 +168,7 @@ public void remove(PlayerInterface player) {
 @Override
 public void run() {
     this.printRules();
-    this.getBet();
+
     this.play();
 }
 
