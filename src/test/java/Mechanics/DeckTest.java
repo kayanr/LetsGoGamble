@@ -28,9 +28,6 @@ public void shuffleTest(){
     Assert.assertFalse(deckBeforeShuffle.pop().getRank().equals(deckAfterShuffle.pop().getRank()));
 
 
-
-
-
 }
 
 

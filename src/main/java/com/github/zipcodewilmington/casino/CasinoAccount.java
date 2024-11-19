@@ -28,4 +28,8 @@ public class CasinoAccount {
     public int showBalance() {
         return 100;
     }
+
+    public Object getPassword() {
+    return null;
+    }
 }

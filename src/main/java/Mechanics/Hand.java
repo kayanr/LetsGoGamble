@@ -20,6 +20,7 @@ public class Hand {
 
     // Get the cards in hand
     public List<Card> getCards() {
+       System.out.println("Value of card was referenced " + cards);
         return cards;
     }
 
