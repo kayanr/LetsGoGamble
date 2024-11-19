@@ -14,8 +14,6 @@ public class CasinoAccountManager {
 
     public CasinoAccountManager() {
         this.accounts = new TreeMap<>();
-
-
     }
     /**
      * @param accountName     name of account to be returned
@@ -44,8 +42,8 @@ public class CasinoAccountManager {
      */
     public CasinoAccount createAccount(String accountName, String accountPassword) {
 
-        return new CasinoAccount(accountName, accountPassword);
 
+        return new CasinoAccount(accountName, accountPassword);
        /* String currentMethodName = new Object(){}.getClass().getEnclosingMethod().getName();
         String currentClassName = getClass().getName();
         String errorMessage = "Method with name [ %s ], defined in class with name [ %s ] has  not yet been implemented";
@@ -58,7 +56,7 @@ public class CasinoAccountManager {
      * @param casinoAccount the arcadeAccount to be added to `this.getArcadeAccountList()`
      */
     public void registerAccount(CasinoAccount casinoAccount) {
-        accounts.put(newAccount.getAccountName(), newAccount);
+        accounts.put(casinoAccount.getAccountName(), casinoAccount);
 
 
 //        String currentMethodName = new Object(){}.getClass().getEnclosingMethod().getName();
