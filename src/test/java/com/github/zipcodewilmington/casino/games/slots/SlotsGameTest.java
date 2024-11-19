@@ -9,11 +9,10 @@ public class SlotsGameTest {
     SlotsGame slotsgame = new SlotsGame();
     @Test
     public void testForSymbols () {
-        // Spin the reels
         String[] reels = SlotsGame.spinReel();
-        // Ensure that each symbol is valid (exists in SYMBOLS array)
+
         for (String symbol : reels) {
-            assertTrue(Arrays.asList(SlotsGame.symbols).contains(symbol), "Invalid symbol: " + symbol);
+            assertTrue(Arrays.asList(SlotsGame.symbols).contains(symbol), "Slots are jammed! Please try again later.");
         }
     }
     @Test
@@ -25,11 +24,20 @@ public class SlotsGameTest {
         assertEquals(Arrays.equals(firstSpin, secondSpin), false, "The two spins should be different.");
     }
     @Test
-    public void testPayout () {
+    public void testPayout1 () {
         // given
         SlotsGame.reel = new String[]{"🍒", "🍒", "🍒"};
         int expectedWinnings = 10;
         int winnings = SlotsGame.calculatePayout();
         assertEquals(10, winnings);
+    }
+
+    @Test
+    public void testPayout2 () {
+        // given
+        SlotsGame.reel = new String[]{"🍀", "🍀", "🍀"};
+        int expectedWinnings = 50;
+        int winnings = SlotsGame.calculatePayout();
+        assertEquals(50, winnings);
     }
 }
