@@ -27,7 +27,7 @@ public class BlackJackGameTest {
 
     deck = new Deck();
 
-    Integer actual = player.getHandTotal();
+    Integer actual = player.getHandTotal().size();
 
     Assert.assertNotNull("Hand should not be null",actual);
     assertTrue(actual >= 4 && actual <= 21, "Hand total should be between 4 and 21");
@@ -57,11 +57,11 @@ public void playerHitTest(){
         deck = new Deck();
 
         player.dealIntitialCards(deck);
-        int handSizeBefore = player.getHandTotal();
+        int handSizeBefore = player.getHandTotal().size();
 
         player.hit(deck);
 
-        int handSizeAfter = player.getHandTotal();
+        int handSizeAfter = player.getHandTotal().size();
 
         assertEquals("Hand size should increase by 1 after player hits", handSizeBefore +1);
 

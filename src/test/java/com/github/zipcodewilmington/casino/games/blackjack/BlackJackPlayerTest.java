@@ -24,9 +24,7 @@ public class BlackJackPlayerTest {
 
     Deck deck = new Deck();
 
-    player.draw(deck.dealCard());
-
-    assertEquals("Diamonds",player.getHand(0).toString());
+    assertEquals("Diamonds",player.getHand().toString());
 
     }
 
@@ -63,7 +61,7 @@ public void getHandTotalTest(){
         Deck deck = new Deck();
         player.draw(deck.dealCard());
         player.draw(deck.dealCard());
-        player.cardReveal(true);
+        player.cardReveal();
         assertEquals(21, player.getHandTotal());
 
 }
