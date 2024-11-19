@@ -8,12 +8,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CardTest {
     Card card;
 
-    public void setUp(){
+    //public void setUp(){
 //        String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
 //        String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
-        card = new Card(0, 0);
+      //  card = new Card(0, 0);
 
-    }
+    //}
     @Test
 
 

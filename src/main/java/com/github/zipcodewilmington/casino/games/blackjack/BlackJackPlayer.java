@@ -1,16 +1,23 @@
 package com.github.zipcodewilmington.casino.games.blackjack;
 
 import Mechanics.Card;
+import Mechanics.Deck;
+import Mechanics.Hand;
 
 public class BlackJackPlayer {
+
+    private Hand hand;
+
+
     public BlackJackPlayer(String name) {
 
-
-
-
+        this.hand = new Hand();
     }
 
-    public void draw(Card card) {
+    public void draw(Deck deck) {
+
+        hand.addCard(deck.dealCard());
+        hand.addCard(deck.dealCard());
     }
 
     public Object getHand(int i) {
@@ -32,5 +39,11 @@ public class BlackJackPlayer {
    return 1; }
 
     public void emptyHand() {
+    }
+
+    public void dealIntitialCards(Deck deck) {
+    }
+
+    public void hit(Deck deck) {
     }
 }

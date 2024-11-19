@@ -9,12 +9,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BlackJackPlayerTest {
 
-   /* BlackJackPlayer player;
+    BlackJackPlayer player;
     public  void setup(){
 
-        player = new BlackJackPlayer();
+        player = new BlackJackPlayer(null);
 
-    }*/
+    }
 
     @Test
 
