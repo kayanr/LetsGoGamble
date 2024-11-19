@@ -9,12 +9,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BlackJackPlayerTest {
 
-   /* BlackJackPlayer player;
+    BlackJackPlayer player;
     public  void setup(){
 
-        player = new BlackJackPlayer();
+        player = new BlackJackPlayer(null);
 
-    }*/
+    }
 
     @Test
 
@@ -24,9 +24,7 @@ public class BlackJackPlayerTest {
 
     Deck deck = new Deck();
 
-    player.draw(deck.dealCard());
-
-    assertEquals("Diamonds",player.getHand(0).toString());
+    assertEquals("Diamonds",player.getHand().toString());
 
     }
 
@@ -63,7 +61,7 @@ public void getHandTotalTest(){
         Deck deck = new Deck();
         player.draw(deck.dealCard());
         player.draw(deck.dealCard());
-        player.cardReveal(true);
+        player.cardReveal();
         assertEquals(21, player.getHandTotal());
 
 }
