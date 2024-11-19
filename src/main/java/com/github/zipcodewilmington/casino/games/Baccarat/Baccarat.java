@@ -6,6 +6,7 @@ import Mechanics.Hand;
 import com.github.zipcodewilmington.casino.CasinoAccount;
 import com.github.zipcodewilmington.casino.GameInterface;
 import com.github.zipcodewilmington.casino.PlayerInterface;
+import com.github.zipcodewilmington.utils.IOConsole;
 
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +16,7 @@ public class Baccarat implements GameInterface, PlayerInterface {
     private Hand playerHand;
     private Hand bankerHand;
     private Deck deck;
+    private Integer accountBalance = 3000;
 
     //Constructor
     public Baccarat(Hand playerHand, Hand bankerHand, Deck deck) {
@@ -120,6 +122,25 @@ public class Baccarat implements GameInterface, PlayerInterface {
         }
     }
 
+    public int getBet() {
+        IOConsole io = new IOConsole();
+        int bet;
+        while (true) {
+            bet = io.getIntegerInput("PLACE YOUR BET...?");
+            if (!canAfford(bet)) {
+                System.out.println("YOU DO NOT HAVE ENOUGH MONEY TO PLAY");
+            } else {
+                accountBalance -= bet;
+                break;
+            }
+        }
+        return bet;
+    }
+
+    public boolean canAfford(int bet) {
+        return bet <= accountBalance;
+    }
+
     // Print the rules of the game
     public void printRules() {
         System.out.println("Baccarat Rules:");
@@ -146,6 +167,7 @@ public void remove(PlayerInterface player) {
 @Override
 public void run() {
     this.printRules();
+    this.getBet();
     this.play();
 }
 
